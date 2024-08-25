@@ -5,7 +5,7 @@ import {
 	setIKFromUrdf,
 } from '../src/index.js';
 import { DEG2RAD } from '../src/core/utils/constants.js';
-import { LoadingManager, sRGBEncoding } from 'three';
+import { LoadingManager, SRGBColorSpace } from 'three';
 import { XacroLoader } from 'xacro-parser';
 import { quat } from 'gl-matrix';
 
@@ -16,7 +16,7 @@ function convertColorsAndTextures( root ) {
 	function _apply( material ) {
 
 		material.color.convertSRGBToLinear();
-		if ( material.map ) material.map.encoding = sRGBEncoding;
+		if ( material.map ) material.map.encoding = SRGBColorSpace;
 
 	}
 
