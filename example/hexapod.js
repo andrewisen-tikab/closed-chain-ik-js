@@ -5,7 +5,7 @@ import {
 	Scene,
 	DirectionalLight,
 	AmbientLight,
-	sRGBEncoding,
+	SRGBColorSpace,
 	Group,
 	Vector3,
 	Mesh,
@@ -78,7 +78,7 @@ function init() {
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	renderer.shadowMap.enabled = true;
 	renderer.shadowMap.type = PCFSoftShadowMap;
-	renderer.outputEncoding = sRGBEncoding;
+	renderer.outputEncoding = SRGBColorSpace;
 	document.body.appendChild( renderer.domElement );
 
 	camera = new PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.01, 100 );

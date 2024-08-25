@@ -5,13 +5,13 @@ import {
 	Scene,
 	DirectionalLight,
 	AmbientLight,
-	sRGBEncoding,
+	SRGBColorSpace,
 	Group,
 	Raycaster,
 	Vector2,
 	Vector4,
 	Mesh,
-	SphereBufferGeometry,
+	SphereGeometry,
 	MeshBasicMaterial,
 	PCFSoftShadowMap,
 	Box3,
@@ -103,7 +103,7 @@ function init() {
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	renderer.shadowMap.enabled = true;
 	renderer.shadowMap.type = PCFSoftShadowMap;
-	renderer.outputEncoding = sRGBEncoding;
+	renderer.outputEncoding = SRGBColorSpace;
 	document.body.appendChild( renderer.domElement );
 
 	camera = new PerspectiveCamera( 50, window.innerWidth / window.innerHeight );
@@ -495,11 +495,11 @@ function render() {
 		const color = new Color( 0xffca28 ).convertSRGBToLinear();
 		const group = new Group();
 		const mesh = new Mesh(
-			new SphereBufferGeometry( 0.05, 30, 30 ),
+			new SphereGeometry( 0.05, 30, 30 ),
 			new MeshBasicMaterial( { color } ),
 		);
 		const mesh2 = new Mesh(
-			new SphereBufferGeometry( 0.05, 30, 30 ),
+			new SphereGeometry( 0.05, 30, 30 ),
 			new MeshBasicMaterial( {
 				color,
 				opacity: 0.4,

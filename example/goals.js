@@ -5,7 +5,7 @@ import {
 	Scene,
 	DirectionalLight,
 	AmbientLight,
-	sRGBEncoding,
+	SRGBColorSpace,
 	Group,
 } from 'three';
 import {
@@ -66,7 +66,7 @@ function init() {
 	renderer = new WebGLRenderer( { antialias: true } );
 	renderer.setPixelRatio( window.devicePixelRatio );
 	renderer.setSize( window.innerWidth, window.innerHeight );
-	renderer.outputEncoding = sRGBEncoding;
+	renderer.outputEncoding = SRGBColorSpace;
 	document.body.appendChild( renderer.domElement );
 
 	camera = new PerspectiveCamera( 50, window.innerWidth / window.innerHeight );
